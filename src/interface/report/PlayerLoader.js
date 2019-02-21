@@ -17,6 +17,7 @@ import makeAnalyzerUrl from 'interface/common/makeAnalyzerUrl';
 import Tooltip from 'common/Tooltip';
 
 import PlayerSelection from 'interface/report/PlayerSelection';
+import RaidBuffs from 'interface/report/RaidComposition/RaidBuffs';
 import handleApiError from './handleApiError';
 
 const defaultState = {
@@ -173,6 +174,7 @@ class PlayerLoader extends React.PureComponent {
             }).filter(friendly => friendly !== null)}
             makeUrl={playerId => makeAnalyzerUrl(report, fight.id, playerId)}
           />
+          <RaidBuffs raid={report.friendlies} />
         </div>
       );
     }
